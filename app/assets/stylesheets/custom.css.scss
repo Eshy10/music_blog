@@ -14,7 +14,7 @@ body {
   height: 60px;
   bottom: 0;
   width: 100%;
-  background-color: #4e443f;
+  background-color: #4e443f !important;
   display:flex;
   justify-content: space-between;
 }
@@ -72,5 +72,5 @@ body {
 
   .fa {
       color: #fe6001;
-      font-size: 1.5rem;
+      font-size: 1rem;
   }
