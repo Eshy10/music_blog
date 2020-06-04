@@ -10,6 +10,12 @@
   </head>
 
   <body>
+  <%= render 'layouts/nav'%>
+    <div id="page-content">
+    <div class="container text-center">
     <%= yield %>
+    </div>
+    </div>
+    <%= render 'layouts/footer'%>
   </body>
 </html>

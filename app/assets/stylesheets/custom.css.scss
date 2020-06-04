@@ -1,1 +1,76 @@
 @import "bootstrap";
+@import "font-awesome";
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+
+#sticky-footer {
+ position: fixed;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  background-color: #4e443f;
+  display:flex;
+  justify-content: space-between;
+}
+
+#current {
+    color: #fe6001;
+}
+
+.nav-bottom {
+    margin: 0;
+    padding-bottom: 10px;
+    position: relative;
+    border-bottom: 2px solid #847f7b;
+  }
+  
+.nav-bottom:before {
+    position: absolute;
+    background: #e9062f;
+    height: 2px;
+    content: '';
+    width: 12rem;
+    bottom: -2px;
+    left: 0;
+  }
+
+  #border-l {
+    position: relative;
+  }
+  
+  
+  /* Main div for border to extend to 50% from bottom left corner */
+  
+  #border-l:after {
+    content: "";
+    background: #847f7b;
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    height: 40%;
+    width: 2px;
+  }
+
+  .footer-flex {
+      display: flex;
+      padding: 1em;
+  }
+
+  ul {
+      list-style-type: none;
+  }
+
+  .footer-flex li {
+      padding: .3em;
+  }
+
+  .fa {
+      color: #fe6001;
+      font-size: 1.5rem;
+  }
