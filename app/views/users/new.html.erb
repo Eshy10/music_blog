@@ -1,2 +1,19 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class= 'container-fluid mt-5'>
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+       <%= image_tag("music", class: 'card-img') %>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h3>Sign Up</h3>
+        <%= form_with(model: @user, local: true) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+        <%= f.submit "Submit", class: 'btn mt-3 btn-orange'%>
+    <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
       <li class="nav-item">
-        <a class="nav-link font-weight-bold" id= "current" href="#">Home</a>
+        <%= link_to 'Home', root_path, class: 'nav-link font-weight-bold', id: 'current' %>
       </li>
       <li class="nav-item">
         <a class="nav-link font-weight-bold" href="#">Create an Article</a>
@@ -15,10 +15,10 @@
     </ul>
      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-        <a class="nav-link font-weight-bold" href="#">Login</a>
+        <%= link_to 'Login', login_path, class: 'nav-link font-weight-bold' %>
       </li>
       <li class="nav-item" id="border-l">
-        <a class="nav-link font-weight-bold" href="#">Register</a>
+          <%= link_to 'Register', signup_path, class: 'nav-link font-weight-bold' %>
       </li>
         </ul>
   </div>

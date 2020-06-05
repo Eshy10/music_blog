@@ -123,3 +123,20 @@ body {
   .img-bottom {
       border-bottom: 2px solid yellow;
   }
+
+  .card-img {
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  .card-title::after {
+    content: ""; 
+    display: block; 
+    width: 12%; 
+    border-bottom: 2px solid #fe6001;
+  }
+
+  .btn-orange {
+    background-color: #fe6001;
+    color: #4e443f;
+  }
