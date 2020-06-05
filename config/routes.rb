@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'categories/show'
   get 'articles/index'
   get 'sessions/new'
   get 'sessions/create'

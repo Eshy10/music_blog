@@ -6,12 +6,12 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 
 #sticky-footer {
  position: fixed;
-  height: 60px;
   bottom: 0;
   width: 100%;
   background-color: #4e443f !important;
@@ -71,6 +71,55 @@ body {
   }
 
   .fa {
-      color: #fe6001;
+      color: #4e443f;
       font-size: 1rem;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #fe6001;
+  background-color: #fe6001;
+  padding: 0.35em 0.4em;
+
+  }
+  
+  .img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      position:relative;
+      z-index:-1;
+   
+  }
+
+  .image {
+      height: 40vh;
+      max-width: 100%;
+      position:relative;
+      z-index:-1;
+  }
+
+  .main-img, .bg {
+      position: relative;
+      display:inline-block;
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  }
+
+  .bottom-left {
+    position: absolute;
+    bottom: 50px;
+    left: 16px;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+
+  .bottom-left-main {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+
+  .img-bottom {
+      border-bottom: 2px solid yellow;
   }
