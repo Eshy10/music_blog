@@ -1,0 +1,39 @@
+<% if @liked_article  %>
+<div class= 'row'>
+<div class = 'container-fluid p-0'>
+<div class= 'col sm-12 main-img'>
+
+  <%= image_tag(@liked_article.image.url, class: 'img') %> 
+    <div class="bottom-left-main">
+    <h6 id= 'current' class= 'font-weight-bold ml-3'><%= @liked_article.title %></h6>
+    <p class= 'text-white font-weight-bold ml-3'><%= truncate(@liked_article.text, length: 50) %></p>
+    </div>
+  
+</div>
+</div>
+</div>
+<!-- categories -->
+ <div id="portfolio">
+<div class="container-fluid p-0">
+<div class="row no-gutters">
+<% Category.includes(:ordered_by_most_recent).each do |category|%>
+ <% subcategories = category.ordered_by_most_recent.first %>
+<div class="col-sm-3 bg">
+ <%= image_tag(subcategories.image.url, class: 'image') %>
+ <div class="top-left">
+    <h6 class= 'font-weight-bold text-white img-bottom'><%= category.name %></h6>
+    </div>
+ <div class="bottom-left">
+    <p class= 'text-white font-weight-bold'><%= truncate(subcategories.text, length: 50) %></p>
+    </div>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+<% else %>
+<div class= 'container text-center'>
+<p>You need to create an article to start blogging</p>
+</div>
+<% end %>
+           

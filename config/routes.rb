@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get 'signup', to: 'users#new', as: 'signup'
   get 'users/create'
-  root to: 'articles#index'
+  root to: 'categories#index'
   resources :articles do
     member do
       post 'upvote'

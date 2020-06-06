@@ -1,16 +1,18 @@
 class ArticlesController < ApplicationController
   def index
-    
+
   end
 
   def new
+    @article = Article.new
   end
 
   def create
-    @article = current_user.articles.build(article_params)
+    @article = Article.new(article_params)
+    @article.author_id = current_user.id
     if @article.save
       flash[:notice] = 'Article created'
-      redirect_to @article
+      redirect_to root_path
     else
       render :new
     end
@@ -40,10 +42,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def vote!
+    
+  end
+
   private
 
   def article_params
-    params.require(:articles).permit(:title, :text, :image, category_ids: [])
+    params.require(:article).permit(:title, :text, :image, category_ids: [])
   end
 
 end
