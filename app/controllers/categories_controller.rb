@@ -10,9 +10,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = "Category was created successfully"
-      redirect_to categories_path
+      flash[:notice] = "Category was created successfully"
+      redirect_to root_path
     else
+      flash[:alert] = "An error occurred"
       render 'new'
     end
   end
@@ -33,7 +34,7 @@ class CategoriesController < ApplicationController
   
   def show
     @category = Category.find(params[:id])
-    @category_articles = @category.articles
+    @category_articles = @category.articles.ordered_by_most_recent
   end
 
   private
