@@ -1,37 +1,23 @@
-
-<h1>Articles in the same categories will be listed here</h1>
 <div class="row no-gutters">
 <div class="col-sm-6">
 <div class="card mb-3 card-height">
   <div class="row no-gutters">
     <div class="col-md-6">
-      <%= image_tag("fantasy-3879972_960_720", class: 'card-img') %>
+    <% @category_articles.each do |article| %>
+      <%= image_tag(article.image.url, class: 'card-img') %>
     </div>
     <div class="col-md-6">
       <div class="card-body">
-        <h5 class="card-title" id= 'current'>Pop</h5>
-        <h5 class="card-text font-weight bold">Top music</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title" id= 'current'><%= @category.name %></h5>
+        <h5 class="card-text font-weight bold"><%= article.title %></h5>
+        <p class="card-text"><%= truncate(article.text, length: 75) %></p>
+        <h6 class="card-title" id= 'current'>Author: <%= article.author.name %></h6>
+        <%= pluralize(article.votes.count, 'Vote') %>
+        <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, upvote_article_path(article), method: :post%>
+        <span><%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, downvote_article_path(article), method: :delete%></span>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-6">
-      <%= image_tag("fantasy-3879972_960_720", class: 'card-img') %>
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title" id= 'current'>Pop</h5>
-        <h5 class="card-text font-weight bold">Top music</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 </div>
 </div>
