@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'users/create'
   root to: 'categories#index'
   resources :articles do
+  resources :comments, only: [:create]
     member do
       post 'upvote'
       delete 'downvote'

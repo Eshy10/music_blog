@@ -3,6 +3,7 @@ class Article < ApplicationRecord
     has_many :categories, through: :article_categories
     has_many :votes, :counter_cache => true
     has_many :voters, through: :votes
+    has_many :comments
     belongs_to :author, class_name: 'User'
     validates :title, :text, :image, presence: true
     validates_presence_of :image, message: 'is not uploaded'
@@ -23,5 +24,3 @@ class Article < ApplicationRecord
     end
   end
 
-
-end
