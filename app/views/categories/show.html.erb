@@ -1,9 +1,8 @@
-<div class="row no-gutters">
-<div class="col-sm-6">
+<div class="card-group">
+ <% @category_articles.each do |article| %>
 <div class="card mb-3 card-height">
-  <div class="row no-gutters">
+<div class="row no-gutters">
     <div class="col-md-6">
-    <% @category_articles.each do |article| %>
       <%= image_tag(article.image.url, class: 'card-img') %>
     </div>
     <div class="col-md-6">
@@ -15,9 +14,10 @@
         <%= pluralize(article.votes.count, 'Vote') %>
         <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, upvote_article_path(article), method: :post%>
         <span><%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, downvote_article_path(article), method: :delete%></span>
-        <% end %>
       </div>
     </div>
   </div>
-</div>
+  </div>
+   <% end %>
+  </div>
 </div>

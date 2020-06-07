@@ -12,4 +12,16 @@ class Article < ApplicationRecord
     scope :highest_vote, -> { order(votes_count: :desc) }
 
 
+  def upvote(user)
+    vote = votes.build
+    vote.user_id = user
+    vote.save
+  end
+
+  def downvote(user)
+    votes.where(user_id: user).first.destroy
+    end
+  end
+
+
 end
