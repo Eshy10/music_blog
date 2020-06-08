@@ -1,8 +1,7 @@
 <% if @liked_article  %>
+<div class = 'container-fluid'>
 <div class= 'row'>
-<div class = 'container-fluid p-0'>
-<div class= 'col sm-12 main-img'>
-
+<div class= 'col sm-12 main-img p-0'>
   <%= image_tag(@liked_article.image.url, class: 'img') %> 
     <div class="bottom-left-main">
     <h6 id= 'current' class= 'font-weight-bold ml-3'><%= @liked_article.title %></h6>

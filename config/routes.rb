@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-  get 'signup', to: 'users#new', as: 'signup'
-  get 'users/create'
+  get '/signup', to: 'users#new', as: 'signup'
+  post '/signup', to: 'users#create'
   root to: 'categories#index'
+  resources :users, only: [:new, :create]
   resources :articles do
   resources :comments, only: [:create]
     member do

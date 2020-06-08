@@ -1,14 +1,9 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+
 /* Sticky Footer Classes */
-
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
-}
-
 
 #sticky-footer {
  position: fixed;
@@ -125,7 +120,7 @@ body {
   }
 
   .card-img {
-    height: 100vh;
+    height: 60vh;
     object-fit: cover;
   }
 
@@ -143,4 +138,22 @@ body {
 
   #img-h {
     height: 100vh;
+  }
+
+  .img-article img{
+  width: 100%;
+  height: 40vh;
+  object-fit: contain;
+  }
+
+  .articles, .article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+
+  .article-img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
   }

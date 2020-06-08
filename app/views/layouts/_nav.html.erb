@@ -6,16 +6,18 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
-     <% if logged_in? && current_user.admin? %>
+     <% if logged_in? %>
       <li class="nav-item">
         <%= link_to 'Home', root_path, class: 'nav-link font-weight-bold', id: 'current' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Create an Article', new_article_path, class: 'nav-link font-weight-bold' %>
       </li>
+      <% if logged_in? && current_user.admin? %>
       <li class="nav-item">
         <%= link_to 'Create a Category', new_category_path, class: 'nav-link font-weight-bold' %>
       </li>
+      <% end %>
        <% end %>
     </ul>
      <ul class="navbar-nav ml-auto">

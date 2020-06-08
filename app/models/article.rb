@@ -1,26 +1,34 @@
 class Article < ApplicationRecord
     has_many :article_categories
     has_many :categories, through: :article_categories
-    has_many :votes, :counter_cache => true
+    has_many :votes
     has_many :voters, through: :votes
-    has_many :comments
+    has_many :comments, dependent: :destroy
     belongs_to :author, class_name: 'User'
     validates :title, :text, :image, presence: true
     validates_presence_of :image, message: 'is not uploaded'
     validates_presence_of :categories, message: 'not selected.'
     mount_uploader :image, PictureUploader
     scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+    has_many :users_vote, through: :votes, source: :user
     scope :highest_vote, -> { order(votes_count: :desc) }
 
 
-  def upvote(user)
+  def voted?(userid)
+    true if users_vote.where(id: userid).first
+  end
+
+  def upvote(userid)
     vote = votes.build
-    vote.user_id = user
+    vote.user_id = userid
+    update votes_count: votes_count + 1
     vote.save
   end
 
-  def downvote(user)
-    votes.where(user_id: user).first.destroy
-    end
+  def downvote(userid)
+    votes.where(user_id: userid).first.destroy
+    update votes_count: votes_count - 1
+  end
+
   end
 
