@@ -93,6 +93,8 @@ GEM
     excon (0.73.0)
     execjs (2.7.0)
     ffi (1.13.0)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     fog-aws (3.6.5)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -259,6 +261,7 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
+  figaro
   fog-aws
   font-awesome-rails
   jbuilder (~> 2.5)
