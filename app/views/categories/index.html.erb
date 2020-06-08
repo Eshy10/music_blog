@@ -10,7 +10,13 @@
 </div>
 </div>
 </div>
+<% else %>
+<div class= 'container text-center'>
+<p>You need to create an article to start blogging</p>
+</div>
+<% end %>
 <!-- categories -->
+<% if Category.all %>
  <div id="portfolio">
 <div class="container-fluid p-0">
 <div class="row no-gutters">
@@ -36,4 +42,5 @@
 <p>You need to create an article to start blogging</p>
 </div>
 <% end %>
+
            

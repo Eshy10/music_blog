@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :require_user, only: [:show]
   def index
     @liked_article = Article.highest_vote.first
   end
@@ -42,4 +43,11 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name)
   end
+
+  def require_user
+    if !logged_in?
+     flash[:notice] = 'You are required to log in before you perform this action'
+     redirect_to root_path
+    end
+end
 end

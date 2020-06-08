@@ -86,7 +86,7 @@
 
   .image {
       height: 40vh;
-      max-width: 100%;
+      width: 100%;
       position:relative;
       z-index:-1;
   }
@@ -135,9 +135,9 @@
     background-color: #fe6001;
     color: #4e443f;
   }
-
+  
   #img-h {
-    height: 100vh;
+    height: 97vh;
   }
 
   .img-article img{
@@ -152,8 +152,16 @@
     
   }
 
+  #reverse:nth-of-type(3) {
+   order: 1;
+  }
+
   .article-img {
     width: 100%;
     height: 60vh;
     object-fit: cover;
+  }
+
+  .category-info {
+    grid-template-columns: repeat(4, 1fr);
   }

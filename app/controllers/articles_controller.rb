@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
      @article.upvote(current_user.id)
     if @article.save
       flash[:notice] = 'You voted for this article'
-      redirect_to root_path
+      redirect_to request.referer
     else
       flash[:alert] = 'An error occured'
     end
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
     if @article
       @article.downvote(current_user.id)
       flash[:alert] =  "vote deleted!"
-      redirect_to root_path
+      redirect_to request.referer
     else 
       flash[:alert] =  "You can't delete a vote that you didnt vote for"
       redirect_to root_path
