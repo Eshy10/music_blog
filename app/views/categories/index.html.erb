@@ -20,7 +20,6 @@
 <div class="container-fluid p-0">
 <div class="row no-gutters">
 <% Category.includes(:ordered_by_most_recent).each do |category|%>
-<% if category && subcategories %>
  <% subcategories = category.ordered_by_most_recent.first %>
 <div class="col-sm-3 bg">
 <div class="element">
@@ -33,11 +32,6 @@
  <div class="bottom-left">
     <p class= 'text-white font-weight-bold'><%= subcategories.title %></p>
     </div>
-</div>
-<% end %>
-<% else %>
-<div class= 'container text-center'>
-<p>You need to create an article to start blogging</p>
 </div>
 <% end %>
 <% end %>
