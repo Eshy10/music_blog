@@ -23,14 +23,14 @@
  <% subcategories = category.ordered_by_most_recent.first %>
 <div class="col-sm-3 bg">
 <div class="element">
- <%= image_tag(subcategories.image.url, class: 'image element"') %>
+ <%= image_tag( subcategories.present? ? subcategories.image.url : '', class: 'image element"') %>
  </div>
   <%= link_to category_path(category.id) do %>
  <div class="top-left">
     <h6 class= 'font-weight-bold text-white img-bottom'><%= category.name %></h6>
     </div>
  <div class="bottom-left">
-    <p class= 'text-white font-weight-bold'><%= subcategories.title %></p>
+    <p class= 'text-white font-weight-bold'><%= subcategories.present? ? subcategories.title : '' %></p>
     </div>
 </div>
 <% end %>
