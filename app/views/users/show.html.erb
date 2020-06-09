@@ -1,1 +1,26 @@
-<h1></h1>
+<div class="row">
+    <div class="container text-center">
+      <div class="card">
+        <div class="card-image align center">
+         <% if @user.image.url %>
+         <%= image_tag @user.image.url, size: '100x100' %> 
+          <% else %>
+        <%= image_tag('music') %> 
+        <% end %>
+        </div>
+        <div class="card-content">
+          <p class= 'font-weight-bold'>Author: <%= @user.name %></p>
+          <p><span class= 'font-weight-bold'>Bio:</span> <%= @user.bio %></p>
+        </div>
+        <h6 class= 'font-weight-bold'>Links to my articles are listed below</h6>
+        <div class="card-action">
+        <% @user.articles.each do |article| %>
+          <%=link_to article.title, article_path(article.id), id: 'current' %>
+          <% end %>
+          <% if current_user == @user %>
+         <p> <%= link_to 'Edit Profile', edit_user_path(@user), class:'text-success' %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

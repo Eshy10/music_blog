@@ -4,12 +4,15 @@
 </div>
 <h1 class=" text-center font-weight-bold text-title"><%= @article.title%></h1>
 <p class="text-center neon font-weight-bold"><%= @article.text%></p>
-<span class= 'font-weight-bold'>Written by : <strong><% @article.author.name %> </strong></span>
- <%= pluralize(@article.votes.count, 'Vote') %>
+<span class= 'font-weight-bold'>Author : <strong><%=link_to @article.author.name, user_path(@article.author) %> </strong></span>
+<% if @article.author.image.url.present? %>
+<%= image_tag @article.author.image.url, class: 'avatar'%>
+<% end %>
+ <span class= "ml-3"><%= pluralize(@article.votes.count, 'Vote') %></span>
        <% if !@article.voted?(current_user.id)%>
         <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, upvote_article_path(@article), method: :post%>
         <% else %>
         <span><%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, downvote_article_path(@article), method: :delete%></span>
         <% end %>
-          <%= social_share_button_tag('Share to Facebook', :url => articles_path(@article), desc: @article.title) %>
+          <%= social_share_button_tag(@article.title) %>
 </div>

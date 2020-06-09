@@ -1,0 +1,43 @@
+<%= render 'shared/errors', obj: @user %>
+<div class= 'container-fluid mt-5'>
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+       <%= image_tag("music", class: 'card-img element', id: 'img-h') %>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+         <%= form_for(@user, :html => { multipart: true, class: "shadow p-1 mb-4 bg-success rounded", role: "form" }) do |f| %>
+        <div class="form-group row">
+          <%= f.label :name, class: "col-2 text-light" %>
+          <div class="col-10">
+            <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "Enter your name" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :bio, class: "col-2  text-light" %>
+          <div class="col-10"> 
+            <%= f.text_area :bio, rows: 10, class: "form-control shadow rounded", placeholder: "Enter your bio" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :image, :class => 'col-2 text-light' %>
+         <div class="col-lg-10">
+          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+       </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit class: "btn btn-outline-light btn-lg" %>
+        </div>
+      <% end %>
+      <div class="col-xs-4 col-xs-offset-4">
+      [ <%= link_to "Cancel request and return to articles listing", articles_path %> ]      
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

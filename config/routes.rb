@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/user_article', to: 'articles#user_articles'
   root to: 'categories#index'
-  resources :users, only: [:new, :create, :show]
+  resources :users, except: [:destroy]
   resources :articles do
   resources :comments, only: [:create]
     member do
