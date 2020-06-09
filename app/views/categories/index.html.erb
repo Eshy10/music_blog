@@ -23,7 +23,9 @@
 <% Category.includes(:ordered_by_most_recent).each do |category|%>
  <% subcategories = category.ordered_by_most_recent.first %>
 <div class="col-sm-3 bg">
- <%= image_tag(subcategories.image.url, class: 'image') %>
+<div class="element">
+ <%= image_tag(subcategories.image.url, class: 'image element"') %>
+ </div>
   <%= link_to category_path(category.id) do %>
  <div class="top-left">
     <h6 class= 'font-weight-bold text-white img-bottom'><%= category.name %></h6>
