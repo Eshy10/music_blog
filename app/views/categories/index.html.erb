@@ -16,10 +16,10 @@
 </div>
 <% end %>
 <!-- categories -->
-<% if Category.all %>
  <div id="portfolio">
 <div class="container-fluid p-0">
 <div class="row no-gutters">
+<% if category && subcategories %>
 <% Category.includes(:ordered_by_most_recent).each do |category|%>
  <% subcategories = category.ordered_by_most_recent.first %>
 <div class="col-sm-3 bg">
