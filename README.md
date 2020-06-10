@@ -17,7 +17,6 @@
 ![screencapture-peaceful-ridge-37366-herokuapp-categories-4-2020-06-10-01_49_32](https://user-images.githubusercontent.com/52670459/84218758-fb06e100-aac6-11ea-8d0f-96cf1fd4a2e8.png)
 
 ## Article New Page
-- index.html
 
 ![screencapture-peaceful-ridge-37366-herokuapp-articles-new-2020-06-10-01_51_28](https://user-images.githubusercontent.com/52670459/84218811-17a31900-aac7-11ea-8551-2f638da4c060.png)
 
