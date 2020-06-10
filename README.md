@@ -81,7 +81,7 @@ Open `http://localhost:3000/` in your browser.
 - Capybara 
 
 ## Video description of the project
-<a href="https://www.loom.com/share/c77de884d51542afb56e493d083d03c8">click here to watch the video</a>
+<a href="https://www.loom.com/share/f9156e80f61f45628ee613e2f057b6ce">click here to watch the video</a>
 
 
 ## Author
