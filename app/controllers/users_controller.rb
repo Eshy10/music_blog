@@ -1,23 +1,21 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:edit, :update, :show]
+  before_action :find_user, only: %i[edit update show]
 
   def new
     @user = User.new
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
-        redirect_to @user
+      redirect_to @user
     else
-        render :edit
+      render :edit
     end
-end
+  end
 
   def create
     @user = User.new(user_params)
@@ -39,5 +37,5 @@ end
 
   def find_user
     @user = User.find(params[:id])
- end
+  end
 end

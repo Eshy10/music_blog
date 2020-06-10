@@ -1,15 +1,14 @@
 class Article < ApplicationRecord
-    has_many :article_categories
-    has_many :categories, through: :article_categories
-    has_many :votes
-    has_many :voters, through: :votes
-    belongs_to :author, class_name: 'User'
-    validates :title, :text, :image, :categories, presence: true
-    mount_uploader :image, PictureUploader
-    scope :ordered_by_most_recent, -> { order(created_at: :desc) }
-    has_many :users_vote, through: :votes, source: :user
-    scope :highest_vote, -> { order(votes_count: :desc) }
-
+  has_many :article_categories
+  has_many :categories, through: :article_categories
+  has_many :votes
+  has_many :voters, through: :votes
+  belongs_to :author, class_name: 'User'
+  validates :title, :text, :image, :categories, presence: true
+  mount_uploader :image, PictureUploader
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+  has_many :users_vote, through: :votes, source: :user
+  scope :highest_vote, -> { order(votes_count: :desc) }
 
   def voted?(userid)
     true if users_vote.where(id: userid).first
@@ -26,6 +25,4 @@ class Article < ApplicationRecord
     votes.where(user_id: userid).first.destroy
     update votes_count: votes_count - 1
   end
-
-  end
-
+end

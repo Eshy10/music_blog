@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to: 'categories#index'
   resources :users, except: [:destroy]
   resources :articles do
-  resources :comments, only: [:create]
+    resources :comments, only: [:create]
     member do
       post 'upvote'
       delete 'downvote'

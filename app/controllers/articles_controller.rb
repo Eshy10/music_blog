@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  def index
-  end
+  def index; end
 
   def new
     @article = Article.new
@@ -23,35 +22,32 @@ class ArticlesController < ApplicationController
 
   def upvote
     @article = Article.find(params[:id])
-    if @article.present?
-     @article.upvote(current_user.id)
+    return unless @article.present?
+
+    @article.upvote(current_user.id)
     if @article.save
       flash[:notice] = 'You voted for this article'
       redirect_to request.referer
     else
       flash[:alert] = 'An error occured'
     end
-   end
-    
   end
 
   def downvote
     @article = Article.find(params[:id])
     if @article
       @article.downvote(current_user.id)
-      flash[:alert] =  "vote deleted!"
+      flash[:alert] = 'vote deleted!'
       redirect_to request.referer
-    else 
-      flash[:alert] =  "You can't delete a vote that you didnt vote for"
+    else
+      flash[:alert] = "You can't delete a vote that you didnt vote for"
       redirect_to root_path
     end
   end
-
 
   private
 
   def article_params
     params.require(:article).permit(:title, :text, :image, category_ids: [])
   end
-
 end
