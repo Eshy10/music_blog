@@ -6,7 +6,7 @@
           <%= image_tag(article.image.url, class: 'article-img element') %>
         </div>
         <div class="card-body">
-          <h5 class="card-title" id= 'current'><%= @category.name %></h5>
+          <h5 id= 'current'><%= @category.name %></h5>
           <h5 class="card-text font-weight bold"><%= article.title %></h5>
           <p class="card-text"><%= truncate(article.text, length: 75) %></p>
           <%= pluralize(article.votes.count, 'Vote') %>
