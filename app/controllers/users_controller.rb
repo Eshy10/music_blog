@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %i[edit update show]
+  before_action :same_user, only: %i[edit update]
+  skip_before_action :require_user
 
   def new
     @user = User.new
@@ -37,5 +39,12 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def same_user
+    if current_user != @user 
+      flash[:danger] = "You can only edit or your profile"
+      redirect_to root_path
+    end
   end
 end

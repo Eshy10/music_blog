@@ -1,37 +1,31 @@
-<% if @liked_article  %>
 <div class = 'container-fluid'>
 <div class= 'row'>
 <div class= 'col sm-12 main-img p-0'>
-  <%= image_tag(@liked_article.image.url, class: 'img') %> 
-    <div class="bottom-left-main">
-    <h6 id= 'current' class= 'font-weight-bold ml-3'><%= @liked_article.title %></h6>
-    <p class= 'text-white font-weight-bold ml-3'><%= @liked_article.text %></p>
-    </div> 
+<%= image_tag(@liked_article.image ? @liked_article.image.url : '', class: 'img') %> 
+<div class="bottom-left-main">
+<h6 id= 'current' class= 'font-weight-bold ml-3'><%= @liked_article.title ? @liked_article.title : '' %></h6>
+<p class= 'text-white font-weight-bold ml-3'><%= @liked_article.text ? @liked_article.text : '' %></p>
+</div> 
 </div>
 </div>
 </div>
-<% else %>
-<div class= 'container text-center'>
-<p>You need to create an article to start blogging</p>
-</div>
-<% end %>
 <!-- categories -->
- <div id="portfolio">
+<div id="portfolio">
 <div class="container-fluid p-0">
 <div class="row no-gutters">
 <% Category.includes(:ordered_by_most_recent).each do |category|%>
- <% subcategories = category.ordered_by_most_recent.first %>
+<% subcategories = category.ordered_by_most_recent.first %>
 <div class="col-sm-3 bg">
 <div class="element">
- <%= image_tag( subcategories.present? ? subcategories.image.url : '', class: 'image element"') %>
- </div>
-  <%= link_to category_path(category.id) do %>
- <div class="top-left">
-    <h6 class= 'font-weight-bold text-white img-bottom'><%= category.name %></h6>
-    </div>
- <div class="bottom-left">
-    <p class= 'text-white font-weight-bold'><%= subcategories.present? ? subcategories.title : '' %></p>
-    </div>
+<%= image_tag( subcategories.present? ? subcategories.image.url : '', class: 'image element"') %>
+</div>
+<%= link_to category_path(category.id) do %>
+<div class="top-left">
+<h6 class= 'font-weight-bold text-white img-bottom'><%= category.name %></h6>
+</div>
+<div class="bottom-left">
+<p class= 'text-white font-weight-bold'><%= subcategories.present? ? subcategories.title : '' %></p>
+</div>
 </div>
 <% end %>
 <% end %>

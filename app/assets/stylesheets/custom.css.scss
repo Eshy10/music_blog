@@ -14,9 +14,17 @@
   justify-content: space-between;
 }
 
-#current {
-    color: #fe6001;
+.footer-flex {
+  display: flex;
+  padding: 1em;
 }
+
+ul { list-style-type: none; }
+
+.footer-flex li { padding: .3em; }
+
+
+#current { color: #fe6001; }
 
 .nav-bottom {
     margin: 0;
@@ -25,6 +33,8 @@
     border-bottom: 2px solid #847f7b;
   }
   
+  /* Navigation bar */
+
 .nav-bottom:before {
     position: absolute;
     background: #e9062f;
@@ -35,10 +45,7 @@
     left: 0;
   }
 
-  #border-l {
-    position: relative;
-  }
-  
+  #border-l { position: relative; }
   
   /* Main div for border to extend to 50% from bottom left corner */
   
@@ -52,26 +59,13 @@
     width: 2px;
   }
 
-  .footer-flex {
-      display: flex;
-      padding: 1em;
-  }
-
-  ul {
-      list-style-type: none;
-  }
-
-  .footer-flex li {
-      padding: .3em;
-  }
-
   .fa {
-      color: #4e443f;
-      font-size: 1rem;
-  border-radius: 60px;
-  box-shadow: 0px 0px 2px #fe6001;
-  background-color: #fe6001;
-  padding: 0.35em 0.4em;
+    color: #4e443f;
+    font-size: 1rem;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #fe6001;
+    background-color: #fe6001;
+    padding: 0.35em 0.5em;
 
   }
   
@@ -81,7 +75,6 @@
       object-fit: cover;
       position:relative;
       z-index:-1;
-   
   }
 
   .image {
@@ -115,9 +108,7 @@
     left: 16px;
   }
 
-  .img-bottom {
-      border-bottom: 2px solid yellow;
-  }
+  .img-bottom { border-bottom: 2px solid yellow; }
 
   .card-img {
     height: 60vh;
@@ -136,9 +127,7 @@
     color: #4e443f;
   }
 
-  #img-h {
-    height: 97vh;
-  }
+  #img-h { height: 97vh; }
 
   .img-article img{
   width: 100%;
@@ -148,14 +137,10 @@
 
   .articles, .article {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
+    grid-template-columns: repeat(2, 1fr); 
   }
 
-  .article:nth-child(3), .article:nth-child(4) {
-    direction: rtl;
-  
-  }
+  .article:nth-child(3), .article:nth-child(4) { direction: rtl; }
 
   .article-img {
     width: 100%;
@@ -163,9 +148,7 @@
     object-fit: cover;
   }
 
-  .category-info {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  .category-info { grid-template-columns: repeat(4, 1fr); }
 
   .element:hover {
     -webkit-transform: scaleX(-1);

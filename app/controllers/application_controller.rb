@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?, :log_in, :log_out
+  before_action :require_user
 
   def log_in(user)
     session[:user_id] = user.id
@@ -17,4 +18,12 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def require_user
+    if !logged_in?
+        flash[:notice] = 'You are need to log in to perform this action'
+        redirect_to root_path
+    end
+  end
+
 end

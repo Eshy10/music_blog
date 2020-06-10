@@ -4,7 +4,9 @@ class Article < ApplicationRecord
   has_many :votes
   has_many :voters, through: :votes
   belongs_to :author, class_name: 'User'
-  validates :title, :text, :image, :categories, presence: true
+  validates :image, :categories, presence: true
+  validates :text, presence: true, length: { in: 10..200 }
+  validates :title, presence: true, length: { in: 6..10 }
   mount_uploader :image, PictureUploader
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
   has_many :users_vote, through: :votes, source: :user

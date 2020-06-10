@@ -10,7 +10,7 @@
           <h5 class="card-text font-weight bold"><%= article.title %></h5>
           <p class="card-text"><%= truncate(article.text, length: 75) %></p>
           <%= pluralize(article.votes.count, 'Vote') %>
-              <% if !article.voted?(current_user.id)%>   
+            <% if !article.voted?(current_user.id)%>   
           <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, upvote_article_path(article), method: :post%>
           <% else %>
           <%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, downvote_article_path(article), method: :delete%>

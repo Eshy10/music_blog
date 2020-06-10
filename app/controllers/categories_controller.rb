@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
+  before_action :require_admin, only: [:create, :new]
   before_action :require_user, only: [:show]
+
   def index
+    @categories = Category.all
     @liked_article = Article.highest_vote.first
   end
 
@@ -44,10 +47,11 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name)
   end
 
-  def require_user
-    return if logged_in?
-
-    flash[:notice] = 'You are required to log in before you perform this action'
+  def require_admin
+   if !logged_in? || !current_user.admin
+    flash[:alert] = 'You are cant perform this action'
     redirect_to root_path
+end
   end
+
 end
