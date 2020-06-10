@@ -1,11 +1,11 @@
  <div class="container text-center">
       <div class="card">
         <div class="card-image align center">
-         <%= image_tag(@user.image ? @user.image.url : '', size: '100x100') %> 
+         <%= image_tag(@user.image.present? ? @user.image.url : '', size: '100x100') %> 
         </div>
         <div class="card-content">
           <p class= 'font-weight-bold'>Author: <%= @user.name %></p>
-          <p><span class= 'font-weight-bold'>Bio:</span> <%= @user.bio %></p>
+          <p><span class= 'font-weight-bold'>Bio:</span> <%= @user.bio.present? ? @user.bio : '' %></p>
         </div>
         <h6 class= 'font-weight-bold'>Links to my articles are listed below</h6>
         <div class="card-action">
