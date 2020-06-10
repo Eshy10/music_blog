@@ -42,9 +42,9 @@ class UsersController < ApplicationController
   end
 
   def same_user
-    if current_user != @user 
-      flash[:danger] = "You can only edit or your profile"
-      redirect_to root_path
-    end
+    return unless current_user != @user
+
+    flash[:danger] = 'You can only edit or your profile'
+    redirect_to root_path
   end
 end

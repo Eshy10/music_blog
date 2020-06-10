@@ -9,10 +9,6 @@
 <%= image_tag @article.author.image.url, class: 'avatar'%>
 <% end %>
  <span class= "ml-3"><%= pluralize(@article.votes.count, 'Vote') %></span>
-       <% if !@article.voted?(current_user.id)%>
-        <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, upvote_article_path(@article), method: :post%>
-        <% else %>
-        <span><%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, downvote_article_path(@article), method: :delete%></span>
-        <% end %>
-          <%= social_share_button_tag(@article.title) %>
+         <%= upvote_or_downvote_btn(@article) %>
+        <%= social_share_button_tag(@article.title) %>
 </div>

@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :require_admin, only: [:create, :new]
+  before_action :require_admin, only: %i[create new]
   before_action :require_user, only: [:show]
 
   def index
@@ -48,10 +48,9 @@ class CategoriesController < ApplicationController
   end
 
   def require_admin
-   if !logged_in? || !current_user.admin
+    return unless !logged_in? || !current_user.admin
+
     flash[:alert] = 'You are cant perform this action'
     redirect_to root_path
-end
   end
-
 end

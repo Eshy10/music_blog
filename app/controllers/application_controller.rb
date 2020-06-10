@@ -20,10 +20,9 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    if !logged_in?
-        flash[:notice] = 'You are need to log in to perform this action'
-        redirect_to root_path
-    end
-  end
+    return if logged_in?
 
+    flash[:notice] = 'You are need to log in to perform this action'
+    redirect_to root_path
+  end
 end
