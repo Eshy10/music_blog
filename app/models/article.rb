@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   belongs_to :author, class_name: 'User'
   validates :title, :image, :categories, presence: true
   validates :text, presence: true, length: { in: 10..200 }
-  validates :title, presence: true, length: { in: 6..10 }
+  validates :title, presence: true, length: { in: 6..20 }
   mount_uploader :image, PictureUploader
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
   has_many :users_vote, through: :votes, source: :user
