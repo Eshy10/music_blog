@@ -90,7 +90,7 @@ Open `http://localhost:3000/` in your browser.
 
 - Github: [@githubhandle](https://github.com/Eshy10)
 - Twitter: [@twitterhandle](https://twitter.com/AdesholaAdewal6?s=09)
-- Linkedin: [linkedin](https://www.linkedin.com/in/adewale-adeshola-b0b581139/)
+- Linkedin: [linkedin](https://www.linkedin.com/in/adewale-adeshola)
 
 ## Show your support
 
