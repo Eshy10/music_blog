@@ -18,7 +18,7 @@
 
 ## Article New Page
 
-![screencapture-peaceful-ridge-37366-herokuapp-articles-new-2020-06-10-01_51_28](https://user-images.githubusercontent.com/52670459/84218811-17a31900-aac7-11ea-8551-2f638da4c060.png)
+![screencapture-localhost-3000-articles-new-2020-06-11-11_23_07](https://user-images.githubusercontent.com/52670459/84376872-a902b000-abd9-11ea-9d02-57745ea4e4ba.png)
 
 ## Article Login Page
 
