@@ -1,0 +1,12 @@
+      <% if logged_in?  %>
+        <li class="nav-item">
+        <%= link_to 'Logout', logout_path, class: 'nav-link font-weight-bold' %>
+      </li>
+       <% else %>
+        <li class="nav-item">
+        <%= link_to 'Login', login_path, class: 'nav-link font-weight-bold' %>
+      </li>
+      <li class="nav-item" id="border-l">
+          <%= link_to 'Register', signup_path, class: 'nav-link font-weight-bold' %>
+      </li>
+      <% end %>

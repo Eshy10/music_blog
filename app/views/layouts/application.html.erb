@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div id= 'wrap'>
+  <%= render 'layouts/nav'%>
+    <div class="container-fluid p-0">
+    <%= render 'layouts/messages'%>
+    <%= yield %>
+    </div>
+    </div>
+    <%= render 'layouts/footer'%>
+  </body>
+</html>

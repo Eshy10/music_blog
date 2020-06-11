@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white nav-bottom">
+    <%= image_tag("Shola.png", class: 'navbar-brand', size: '50x40') %> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+     <% if logged_in? %>
+      <li class="nav-item" >
+        <%= link_to 'Home', root_path, class: 'nav-link font-weight-bold', id: 'current' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Create an Article', new_article_path, class: 'nav-link font-weight-bold' %>
+      </li>
+       <%= render 'layouts/categories'%>
+      <li class="nav-item"> <%= admin(current_user) %></li>
+       <% end %>
+    </ul>
+     <ul class="navbar-nav ml-auto">
+     <%= render 'layouts/login'%>
+      </ul>
+  </div>
+</nav>

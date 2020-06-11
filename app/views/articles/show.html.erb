@@ -1,0 +1,14 @@
+<div class= 'container mt-2'>
+<div class= 'img-article'>
+<%= image_tag @article.image.url, class: 'element-show element'%>
+</div>
+<h1 class=" text-center font-weight-bold text-title"><%= @article.title%></h1>
+<p class="text-center neon font-weight-bold"><%= @article.text%></p>
+<span class= 'font-weight-bold'>Author : <strong><%=link_to @article.author.name, user_path(@article.author) %> </strong></span>
+<% if @article.author.image.url.present? %>
+<%= image_tag @article.author.image.url, class: 'avatar'%>
+<% end %>
+ <span class= "ml-3"><%= pluralize(@article.votes.count, 'Vote') %></span>
+         <%= upvote_or_downvote_btn(@article) %>
+        <%= social_share_button_tag(@article.title) %>
+</div>
