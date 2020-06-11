@@ -24,7 +24,7 @@
 
 ![screencapture-localhost-3000-login-2020-06-09-16_24_56](https://user-images.githubusercontent.com/52670459/84218880-41f4d680-aac7-11ea-9842-f00119ed2ed2.png)
 
-## Live Demo LInk
+## Live Demo Link
 <a href= "https://peaceful-ridge-37366.herokuapp.com/">Click here</a>
 
 ## Built With
@@ -37,10 +37,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.4
-Postgres: >=9.5
-Aws s3 bucket (access key and secret key to upload images in production environment)
+- Ruby: 2.6.3
+- Rails: 5.2.4
+- Postgres: >=9.5
+- Aws s3 bucket (access key and secret key to upload images in production environment)
 
 ### Setup
 
