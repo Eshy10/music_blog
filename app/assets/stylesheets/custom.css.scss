@@ -211,3 +211,39 @@ ul { list-style-type: none; }
     height: 50px;
     border-radius: 50%;
   }
+
+  @media (max-width: 768px) {
+  .articles, .article { grid-template-columns: 1fr; }
+
+  #sticky-footer {position: unset;}
+
+  #foot-r { margin-right: 0px;}
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-p { padding: 0px; }
+
+  .row-p { margin-right: 0px; }
+
+  #border-l { position: relative; }
+  
+  /* Main div for border to extend to 50% from bottom left corner */
+  
+  #border-l:after {
+    content: "";
+    background: hsl(30, 22%, 96%);
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    height: 0%;
+    width: 0px;
+  }
+
+  .bottom-left { bottom: 5px;}
+
+  .bottom-left-main { left: 0px;}
+  }
+
