@@ -229,9 +229,7 @@ ul { list-style-type: none; }
   .row-p { margin-right: 0px; }
 
   #border-l { position: relative; }
-  
-  /* Main div for border to extend to 50% from bottom left corner */
-  
+   
   #border-l:after {
     content: "";
     background: hsl(30, 22%, 96%);
