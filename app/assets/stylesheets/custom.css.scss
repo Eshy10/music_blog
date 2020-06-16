@@ -215,8 +215,6 @@ ul { list-style-type: none; }
   @media (max-width: 768px) {
   .articles, .article { grid-template-columns: 1fr; }
 
-  #sticky-footer {position: unset;}
-
   #foot-r { margin-right: 0px;}
 
   .grid-row {
@@ -243,5 +241,10 @@ ul { list-style-type: none; }
   .bottom-left { bottom: 5px;}
 
   .bottom-left-main { left: 0px;}
+  }
+
+
+  @media (max-width: 576px) {
+    #sticky-footer {position: unset;}
   }
 
