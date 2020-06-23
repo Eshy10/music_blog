@@ -1,5 +1,5 @@
 # Muzicx
- > Muzicx is a music blog app where you get to write about article on the following genre music which are pop, Hip-Hop, Afro-music and Rnb. The website basically for music lovers and writers who love to write about their favorite music.
+ >Muzicx is a music blog app where you get to write about articles on the following music genre which are pop, Hip-Hop, Afro-music, and Rnb. The Home page shows all of the articles, and the article with the highest vote appears as the main image, each article when clicked comprises a "read more" link, as well as an option where users can vote for their favorite articles.
 
  ## Features
  - An Homepage with the article with the highest category which appear before recent articles based on their categories.
