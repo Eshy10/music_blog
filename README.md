@@ -88,9 +88,9 @@ Open `http://localhost:3000/` in your browser.
 
 👤 Adewale Adeshola
 
-- Github: [@githubhandle](https://github.com/Eshy10)
-- Twitter: [@twitterhandle](https://twitter.com/AdesholaAdewal6?s=09)
-- Linkedin: [linkedin](https://www.linkedin.com/in/adewale-adeshola)
+- Github: [@Eshy10](https://github.com/Eshy10)
+- Twitter: [@AdesholaAdewal6](https://twitter.com/AdesholaAdewal6?s=09)
+- Linkedin: [@adewale-adeshola](https://www.linkedin.com/in/adewale-adeshola)
 
 ## Show your support
 
